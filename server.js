@@ -14,11 +14,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/index.html'))
+    res.sendFile(path.join(__dirname, './public/index.html'))
 );
 
 app.get('/notes', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
+    res.sendFile(path.join(__dirname, './public/notes.html'))
 );
 
 const readFromFile = util.promisify(fs.readFile);
@@ -41,7 +41,7 @@ const readAndAppend = (content, file) => {
 
 app.get('/api/notes', (req, res) => {
     console.info(`${req.method} request recieved for notes`);
-    readFromFile('./db/notes.json').then((note) => res.json(JSON.parse(note)));
+    readFromFile('./db/db.json').then((note) => res.json(JSON.parse(note)));
 });
 
 app.post('/api/notes', (req, res) => {
@@ -56,7 +56,7 @@ app.post('/api/notes', (req, res) => {
           note_id: uuid(),
     };
 
-    readAndAppend(newNote, './db/notes.json');
+    readAndAppend(newNote, './db/db.json');
     res.json(`Note added!`);
     } else {
         res.error(`oh no there was an error`)
@@ -64,5 +64,5 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.listen(PORT, () => 
-console.log(`Nasa now has control of your PC and is hacking on ${PORT} 👀`)
+    console.log(`Nasa now has control of your PC and is hacking on ${PORT} 👀`)
 );
