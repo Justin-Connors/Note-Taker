@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html')));
 
@@ -49,7 +49,7 @@ app.post('/api/notes', (req, res) => {
         const newNote = {
           title,
           text,
-          note_id: uuid(),
+          id: uuid(),
     };
 
     readAndAppend(newNote, './db/db.json');

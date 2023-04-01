@@ -2,11 +2,16 @@
     {
         "title": "clean room",
         "text": "its heckin dirty",
-        "note_id": "58ef"
+        "id": "58ef"
     },
     {
         "title": "Make my server work",
         "text": "cannot get /notes >:|",
-        "note_id": "a131"
+        "id": "a131"
+    },
+    {
+        "title": "Hello",
+        "text": "I am working",
+        "id": "a923"
     }
 ]
