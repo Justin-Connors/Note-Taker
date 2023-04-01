@@ -4,7 +4,7 @@ const fs = require('fs');
 const util = require('util');
 const uuid = require('./helpers/uuid');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -47,12 +47,12 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request recieved to add a note`);
 
-    const { title, noteinfo } = req.body;
+    const { title, text } = req.body;
 
     if (req.body) {
         const newNote = {
           title,
-          noteinfo,
+          text,
           note_id: uuid(),
     };
 
