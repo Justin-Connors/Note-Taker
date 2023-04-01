@@ -1,11 +1,12 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
+        "title": "clean room",
+        "text": "its heckin dirty",
+        "note_id": "58ef"
     },
     {
-        "title": "clean room",
-        "noteinfo": "its heckin dirty",
-        "note_id": "24d5"
+        "title": "Make my server work",
+        "text": "cannot get /notes >:|",
+        "note_id": "a131"
     }
 ]
